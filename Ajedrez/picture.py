@@ -90,7 +90,13 @@ class Picture:
     return pictureNew
 
   def verticalRepeat(self, n):
-    return Picture(None)
+    picture = self
+    pictureNew = Picture(None);
+
+    for j in range(0,n):
+      pictureNew = pictureNew.up(picture)
+
+    return pictureNew
 
   #Extra: Sólo para realmente viciosos 
   def rotate(self):
