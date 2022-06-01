@@ -44,9 +44,13 @@ class Picture:
     return Picture(pictureHM)
 
   def join(self, p):
-    """ Devuelve una nueva figura poniendo la figura del argumento 
-        al lado derecho de la figura actual """
-    return Picture(None)
+    if(self.img == None):
+      return p
+    else:
+      x = lambda a, b: a + b
+      y = map(x,self.img,p.img)
+
+      return Picture(list(y))
 
   def up(self, p):
     return Picture(None)
