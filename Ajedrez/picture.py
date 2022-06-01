@@ -62,9 +62,23 @@ class Picture:
       return Picture(img+y)
 
   def under(self, p):
-    """ Devuelve una nueva figura poniendo la figura p sobre la
-        figura actual """
-    return Picture(None)
+    debajo = self.img
+    encima = p.img
+    picture = [];
+
+    lines = len(debajo)
+    
+    for i in range(0,lines):
+      line = '';
+      for j in range(0,len(debajo[i])):
+        if(encima[i][j] == ' '):
+          line += debajo[i][j]
+        else:
+          line += encima[i][j]
+
+      picture.append(line)
+
+    return Picture(picture)
   
   def horizontalRepeat(self, n):
     """ Devuelve una nueva figura repitiendo la figura actual al costado
