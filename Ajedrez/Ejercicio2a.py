@@ -1,4 +1,9 @@
 from interpreter import draw
 from chessPictures import *
 
-draw(knight.rotate())
+picture = knight
+
+picture = picture.join(picture.negative())
+picture = picture.negative().up(picture)
+
+draw(picture)
