@@ -98,9 +98,18 @@ class Picture:
 
     return pictureNew
 
-  #Extra: Sólo para realmente viciosos 
   def rotate(self):
-    """Devuelve una figura rotada en 90 grados, puede ser en sentido horario
-    o antihorario"""
-    return Picture(None)
+    figure = self.img
+    picture = [];
+
+    lines = len(figure)
+    
+    for i in range(0,len(figure[0])):
+      line = '';
+      for j in range(0,lines):
+        line += figure[j][i]
+
+      picture.append(line)
+
+    return Picture(picture)
 
