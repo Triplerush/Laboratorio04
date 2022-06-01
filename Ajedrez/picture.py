@@ -1,4 +1,5 @@
 from colors import *
+from interpreter import draw
 class Picture:
   def __init__(self, img):
     self.img = img;
@@ -21,11 +22,10 @@ class Picture:
   def horizontalMirror(self):
     figure = self.img
     lines = len(figure)
-
     pictureHM = [];
 
     for i in range(0,lines):
-      line = [figure[i][a-1] for a in range(lines,-1,-1)];
+      line = [figure[i][a-1] for a in range(len(figure[i]),-1,-1)];
       newLine = "".join(line)
       pictureHM.append(newLine)
 
