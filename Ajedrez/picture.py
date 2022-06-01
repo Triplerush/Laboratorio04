@@ -53,7 +53,13 @@ class Picture:
       return Picture(list(y))
 
   def up(self, p):
-    return Picture(None)
+    if(self.img == None):
+      return p
+    else:
+      img = p.img
+      y = self.img
+
+      return Picture(img+y)
 
   def under(self, p):
     """ Devuelve una nueva figura poniendo la figura p sobre la
