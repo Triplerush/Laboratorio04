@@ -19,8 +19,17 @@ class Picture:
     return Picture(pictureVM)
 
   def horizontalMirror(self):
-    """ Devuelve el espejo horizontal de la imagen """
-    return Picture(None)
+    figure = self.img
+    lines = len(figure)
+
+    pictureHM = [];
+
+    for i in range(0,lines):
+      line = [figure[i][a-1] for a in range(lines,-1,-1)];
+      newLine = "".join(line)
+      pictureHM.append(newLine)
+
+    return Picture(pictureHM)
 
   def negative(self):
     """ Devuelve un negativo de la imagen """
